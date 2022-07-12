@@ -50,11 +50,12 @@ public class ProductoController {
 	public Producto updateProducto(@PathVariable("prodId") Long id,
 			@RequestParam(required = false) String nombre,
 			@RequestParam(required = false) Double precio,
-			@RequestParam(required = false) String imagen1,
-			@RequestParam(required = false) String imagen2,
+			@RequestParam(required = false) Integer categoria_id,
+			@RequestParam(required = false) String img,
+			@RequestParam(required = false) String img2,
 			@RequestParam(required = false) String descripcion,
 			@RequestParam(required = false) String descripcion2) {
-		return productoService.updateProducto(id, nombre, precio, imagen1, imagen2, descripcion, descripcion2);
+		return productoService.updateProducto(id, nombre, precio, categoria_id, img, img2, descripcion, descripcion2);
 	}//deleteProducto
 	
 }//class ProdictpController

@@ -15,11 +15,9 @@ public class UserService {
 		public UserService(UserRepository userRepository) {
 			this.userRepository = userRepository;
 		}// constructor
-		
 		public List<User> getUsers() {
 			return userRepository.findAll();
 		}//getUsers
-		
 		public User getUser(Long id) {
 			return userRepository.findById(id).orElseThrow(
 					()->new IllegalArgumentException("Ël usuario con el id "+ id + " no existe."));
@@ -37,7 +35,6 @@ public class UserService {
 		public User addUser(User user) {
 			User tmpUser = null;
 			Optional<User> userByName = userRepository.findByNombre(user.getNombre());
-			
 			if (userByName.isPresent()) {
 				throw new IllegalArgumentException("Ël usuario con el nombre ["+user.getNombre() + "] ya existe.");
 			} else {

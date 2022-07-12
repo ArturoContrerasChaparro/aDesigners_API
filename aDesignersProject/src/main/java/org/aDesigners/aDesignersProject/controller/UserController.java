@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping (path="/api/users/")
 public class UserController {
 	private final UserService userService;
-	//aqui me quede
 	@Autowired
 	public UserController(UserService userService) {
 		this.userService = userService;
@@ -32,7 +31,6 @@ public class UserController {
 	}//getAllUsers
 	
 	
-					//duda si esto es correcto
 	@GetMapping(path="{userId}")
 	public User getUser(@PathVariable("userId") Long id){
 		return userService.getUser(id);
@@ -55,6 +53,6 @@ public class UserController {
 			@RequestParam(required = false) String tel,
 			@RequestParam(required = false) String contrasena) {
 		return userService.updateUser(id, nombre, correo, tel, contrasena);
-	}//deleteUser
+	}//updateUser
 	
 }//class ProdictpController

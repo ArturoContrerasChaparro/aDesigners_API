@@ -18,20 +18,22 @@ public class Producto {
 	private Long id;
 	private String nombre;
 	private double precio;
+	private Integer categoria_id;
 	@Column(name="img")
-	private String imagen;
+	private String img;
 	@Column(name="img2")
-	private String imgagenTwo;
+	private String img2;
 	private String descripcion;
 	private String descripcion2;
-	public Producto(Long id, String nombre, double precio, String imagen1, String imgagen2, String descripcion,
-			String descripcion2) {
+	public Producto(Long id, String nombre, double precio,Integer categoria_id, String img, String img2, String descripcion,
+			String descripcion2 ) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.precio = precio;
-		imagen = imagen1;
-		imgagenTwo = imgagen2;
+		this.categoria_id= categoria_id;
+		this.img = img;
+		this.img2 = img2;
 		this.descripcion = descripcion;
 		this.descripcion2 = descripcion2;
 	}//constructor
@@ -54,17 +56,25 @@ public class Producto {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	public String getImagen() {
-		return imagen;
+	public Integer getCategoria_id() {
+		return categoria_id;
 	}
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
+
+	public void setCategoria_id(Integer categoria_id) {
+		this.categoria_id = categoria_id;
 	}
-	public String getImgagenTwo() {
-		return imgagenTwo;
+
+	public String getImg() {
+		return img;
 	}
-	public void setImgagenTwo(String imgagenTwo) {
-		this.imgagenTwo = imgagenTwo;
+	public void setImg(String img) {
+		this.img = img;
+	}
+	public String getImg2() {
+		return img2;
+	}
+	public void setImg2(String img2) {
+		this.img2 = img2;
 	}
 	public String getDescripcion() {
 		return descripcion;

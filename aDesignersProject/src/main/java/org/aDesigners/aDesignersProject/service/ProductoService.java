@@ -49,15 +49,16 @@ public class ProductoService {
 			return tmpProd;
 		}//addProducto
 		
-		public Producto updateProducto(Long id, String nombre, Double precio, String imagen1, String imgagen2, String descripcion,
+		public Producto updateProducto(Long id, String nombre, Double precio,Integer categoria_id, String img, String img2, String descripcion,
 				String descripcion2) {
 			Producto tmpProd = null;
 			if(productoRepository.existsById(id)) {
 				tmpProd= productoRepository.findById(id).get();
 				if(nombre!=null) tmpProd.setNombre(nombre);
 				if(precio!=null) tmpProd.setPrecio(precio.doubleValue());
-				if(imagen1!=null) tmpProd.setImagen(imagen1);
-				if(imgagen2!=null) tmpProd.setImgagenTwo(imgagen2);
+				if(categoria_id!=null) tmpProd.setCategoria_id(categoria_id);
+				if(img!=null) tmpProd.setImg(img);
+				if(img2!=null) tmpProd.setImg2(img2);
 				if(descripcion!=null) tmpProd.setDescripcion(descripcion);
 				if(descripcion2!=null) tmpProd.setDescripcion2(descripcion2);
 				
