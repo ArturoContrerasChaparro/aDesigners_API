@@ -72,7 +72,7 @@ class ADesignersProjectApplicationTests {
 	
 	@Test
 	@Disabled
-	public void productoDELETE() throws Exception {
+	public void Producto_DELETE() throws Exception {
 		this.mockMvc.perform( delete("/api/products/9"))
 		.andDo( print() )
 		.andExpect( status().isOk() )
@@ -82,7 +82,7 @@ class ADesignersProjectApplicationTests {
 	
 	@Test
 	@Disabled
-	public void productoPUT() throws Exception {
+	public void Producto_PUT() throws Exception {
 		this.mockMvc.perform(put("/api/products/10").queryParam("nombre", "Techny life"))
 		.andDo( print() )
 		.andExpect(status().isOk())
@@ -130,7 +130,7 @@ class ADesignersProjectApplicationTests {
 	
 	@Test
 	@Disabled
-	public void userDELETE() throws Exception {
+	public void Usuario_DELETE() throws Exception {
 		this.mockMvc.perform(delete("/api/users/4"))
 		.andDo( print() )
 		.andExpect(status().isOk())
@@ -138,7 +138,7 @@ class ADesignersProjectApplicationTests {
 	}// delete DE users
 
 	@Test
-	public void userPut() throws Exception {
+	public void Usuario_Put() throws Exception {
 		this.mockMvc.perform(put("/api/users/3").queryParam("nombre", "Mariana Macias"))
 		.andDo( print() )
 		.andExpect(status().isOk())
